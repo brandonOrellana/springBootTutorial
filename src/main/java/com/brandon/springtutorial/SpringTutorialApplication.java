@@ -9,16 +9,17 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class SpringTutorialApplication {
 
-	//@Autowired
-	//RepoAlumno alumno;
 	public static void main(String[] args) {
 		SpringApplication.run(SpringTutorialApplication.class, args);
 	}
-	/*@Bean
+
+}
+/*@Autowired
+	//RepoAlumno alumno;
+	@Bean
 	public CommandLineRunner demo(RepoAlumno alumno){
 		return (arg) ->{
 			System.err.println("algo");
 			System.out.println(alumno.getNombre());
 		};
 	}*/
-}

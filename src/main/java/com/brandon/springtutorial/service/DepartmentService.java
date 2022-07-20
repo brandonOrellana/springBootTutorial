@@ -1,5 +1,7 @@
 package com.brandon.springtutorial.service;
 
-public interface DepartmentService {
+import com.brandon.springtutorial.entity.Department;
 
+public interface DepartmentService {
+    public Department saveDepartment(Department department);
 }

@@ -1,16 +1,22 @@
 package com.brandon.springtutorial.entity;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long departmentId;
-    private String deparmentName;
+    @NotBlank(message = "Please Add Department Name")
+    private String departmentName;
     private String departmentAddress;
     private String departmentCode;
 
@@ -22,12 +28,12 @@ public class Department {
         this.departmentId = departmentId;
     }
 
-    public String getDeparmentName() {
-        return deparmentName;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void setDeparmentName(String deparmentName) {
-        this.deparmentName = deparmentName;
+    public void setDepartmentName(String deparmentName) {
+        this.departmentName = deparmentName;
     }
 
     public String getDepartmentAddress() {
@@ -48,7 +54,7 @@ public class Department {
 
     public Department(Long departmentId, String deparmentName, String departmentAddress, String departmentCode) {
         this.departmentId = departmentId;
-        this.deparmentName = deparmentName;
+        this.departmentName = deparmentName;
         this.departmentAddress = departmentAddress;
         this.departmentCode = departmentCode;
     }
@@ -60,7 +66,7 @@ public class Department {
     public String toString() {
         return "Department{" +
                 "departmentId=" + departmentId +
-                ", deparmentName='" + deparmentName + '\'' +
+                ", deparmentName='" + departmentName + '\'' +
                 ", departmentAddress='" + departmentAddress + '\'' +
                 ", departmentCode='" + departmentCode + '\'' +
                 '}';

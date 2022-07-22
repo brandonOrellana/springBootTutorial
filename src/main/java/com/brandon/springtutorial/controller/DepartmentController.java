@@ -1,6 +1,7 @@
 package com.brandon.springtutorial.controller;
 
 import com.brandon.springtutorial.entity.Department;
+import com.brandon.springtutorial.error.DepartmentNotFoundException;
 import com.brandon.springtutorial.service.DepartmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,7 @@ public class DepartmentController {
         return departmentService.fetchDepartmentList();
     }
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId){
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return departmentService.fetchDepartmentById(departmentId);
     }
     @DeleteMapping("/departments/{id}")

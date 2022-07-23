@@ -22,3 +22,5 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(message);
     }
 }
+//Los metodos tambien puden responder ResponseStatus, y tambien cuado quiera responder con ogjetos
+//Usar el ResponseBody par aloso errores
